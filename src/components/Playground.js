@@ -42,6 +42,8 @@ function Playground(props) {
       <button onClick={() => setSpinnerOn(!spinnerOn)}>Toggle spinner</button>
       <h3>Your choice is: {choice}</h3>
       <button onClick={() => setChoice('rock')}>Choose rock</button>
+      <button onClick={() => setChoice('scissors')}>Choose scissors</button>
+      <button onClick={() => setChoice('paper')}>Choose paper</button>
     </div>
   )
 }
