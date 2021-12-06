@@ -22,14 +22,56 @@ import { render } from 'react-dom'
 */
 
 function App(props) {
+  let val = '';
+
+  if (props.name === 'Casey') {
+    val = 'Casey is the best!';
+  } else {
+    val = 'NOOOOOOOOO';
+  }
+
   return (
     <div className='container'>
+      {/* 
+          const newElem = document.createElement('div');
+          newElem.classList.add('container');
+
+          class => reserved word!! sooooo className
+      */}
+      { props.name === 'Casey' ? 'Casey is the best!' : 'Where is Casey?' }
+      { props.name === 'Casey' && 'You are so lucky web50!' }
+      {/**
+       * if (props.name === 'Casey') {
+       *   return 'Casey is the best!'
+       * } else {
+       *   return 'Where is Casey?'
+       * }
+       */}
       <h1>Welcome to React, Web {props.cohort}</h1>
+      <p>Instructor: {props.name}</p>
+      <p>Class size: {props.classSize}</p>
+      <img src="blah.jpg" />
     </div>
   )
 }
 
 render(
-  <App cohort='37' />,
+  <App cohort='50' name='Sean' classSize='82' />,
   document.querySelector('#root')
 )
+
+// const props = {
+//   cohort: '50',
+//   name: 'Casey',
+//   classSize: '82'
+// }
+
+// App(props);
+
+// function myFunction(a) { console.log(a) }
+// const props = {
+//   1: '1',
+//   2: '2',
+//   3: '3'
+// }
+// myFunction(1, 2, 3, 4);
