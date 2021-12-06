@@ -18,15 +18,30 @@ function Playground(props) {
   // it's a function that takes in one parameter, the initial state value
   // it returns an array with 2 things: that state variable itself, and the 'changer' function
   const [count, setCount] = useState(100);
+  const [spinnerOn, setSpinnerOn] = useState(false);
+  const [choice, setChoice] = useState('scissors');
 
   // NEVER, EVER, EVER, EVER, EVER do this: let count = 0
   // ALWAYS, ALWAYS, ALWAYS use state
 
+  if (spinnerOn) {
+    return (
+      <div className='container'>
+        <h3>The spinner is { spinnerOn ? 'ON' : 'OFF'}. Please wait...</h3>
+        <button onClick={() => setSpinnerOn(false)}>Turn it off!</button>
+      </div>
+    )
+  }
+
   return (
-    <div>
+    <div className='container'>
       <h1>{count}</h1>
       <button onClick={() => setCount(count + 1)}>Add!</button>
       <button onClick={() => setCount(count - 1)}>Subtract!</button>
+      <h3>The spinner is { spinnerOn ? 'ON' : 'OFF'}</h3>
+      <button onClick={() => setSpinnerOn(!spinnerOn)}>Toggle spinner</button>
+      <h3>Your choice is: {choice}</h3>
+      <button onClick={() => setChoice('rock')}>Choose rock</button>
     </div>
   )
 }
