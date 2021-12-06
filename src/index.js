@@ -1,6 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 
+import Playground from './components/Playground';
 /*
 💥💥💥 Rules when DECLARING a React component 💥💥💥
   - Name is capitalized
@@ -22,14 +23,6 @@ import { render } from 'react-dom'
 */
 
 function App(props) {
-  let val = '';
-
-  if (props.name === 'Casey') {
-    val = 'Casey is the best!';
-  } else {
-    val = 'NOOOOOOOOO';
-  }
-
   return (
     <div className='container'>
       {/* 
@@ -38,7 +31,7 @@ function App(props) {
 
           class => reserved word!! sooooo className
       */}
-      { props.name === 'Casey' ? 'Casey is the best!' : 'Where is Casey?' }
+      { props.name === 'Casey' ? 'Casey is the best!' : null }
       { props.name === 'Casey' && 'You are so lucky web50!' }
       {/**
        * if (props.name === 'Casey') {
@@ -51,12 +44,16 @@ function App(props) {
       <p>Instructor: {props.name}</p>
       <p>Class size: {props.classSize}</p>
       <img src="blah.jpg" />
+      <Playground greeting='Welcome to CaseyBook' />
+      {/** const props = { greeting: 'Rock and Roll!!' } */}
+      {/** Playground(props) */}
+      {/* document.createElement('playground'); */}
     </div>
   )
 }
 
 render(
-  <App cohort='50' name='Sean' classSize='82' />,
+  <App cohort='50' name='Casey' classSize='82' />,
   document.querySelector('#root')
 )
 
