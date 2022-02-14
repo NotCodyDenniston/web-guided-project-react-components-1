@@ -25,11 +25,29 @@ function App(props) {
   return (
     <div className='container'>
       <h1>Welcome to React, Web {props.cohort}</h1>
+      <p>Instructor {props.instructor} is teaching {props.numStudents}</p>
+      <p>He is very {props.happiness}</p>
     </div>
   )
 }
 
 render(
-  <App cohort='37' />,
+  <App 
+    cohort='37'
+    instructor={'casey'}
+    numStudents='67'
+    happiness='sad' 
+  />,
   document.querySelector('#root')
 )
+
+
+
+// const props = {
+//   cohort: '52',
+//   instructor: 'casey',
+//   numStudents: '67',
+//   happiness: 'sad'
+// }
+
+//App(props)
